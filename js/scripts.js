@@ -1,72 +1,94 @@
-let toDoRepository = (function() {
-    let repository = [
-      {
-        task: "Task",
-        note: "Note",
-        tags: ["grass", "poison"]
-      }
-    ];
-    function add(task) {
-      if (
-        typeof task === "object" &&
-        "task" in task &&
-        "note" in task &&
-        "tags" in task
-      ) {
-        repository.push(task);
-      } else {
-        console.log("Task is not complete");
-      }
+
+function newItem(){
+
+  //javascript
+  
+    //1. Adding a new item to the list of items: 
+  
+    let li = $('<li></li>');
+    let inputValue = $('#input').val();
+    let text = document.createTextNode(inputValue);
+    //$('li').append(text);
+    li.append(text);
+   
+    //let li = document.createElement("li");
+    //let inputValue = document.getElementById("input").value;
+    //let text = document.createTextNode(inputValue);
+    //li.appendChild(text);
+  
+     if (inputValue === '') {
+       alert("You must write something!");
+     } else {
+       let list = $('#list');
+       list.append(li);
+     }
+  
+   //2. Crossing out an item from the list of items:
+      function crossOut() {
+      li.toggleClass("strike");
+     }
+     $('li').on("dblclick", crossOut);
+  
+   //3(i). Adding the delete button "X": 
+    
+    let crossOutButton = $('<crossOutButton></crossOutButton>');
+    crossOutButton.append(document.createTextNode("X"));
+    li.append(crossOutButton);
+    
+    //let crossOutButton = document.createElement("crossOutButton");
+     //crossOutButton.appendChild(document.createTextNode("X"));
+     //li.appendChild(crossOutButton);
+  
+     $('crossOutButton').on('click', deleteListItem)
+    
+  //  crossOutButton.addEventListener("click", deleteListItem);
+   
+    
+    //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+     function deleteListItem(){
+       li.addClass("delete")
+     }
+   // 4. Reordering the items: 
+     $('#list').sortable();
+  
+  };
+  
+
+  
+  
+  // If you get stuck, you can look below for the jQuery code. However, try yourself to convert the vanilla JS code provided to jQuery first.
+  
+
+  
+    /*
+  // jQuery Code
+  //1. Adding a new item to the list:
+  
+    let li = $('<li></li>');
+    let inputValue = $('#input').val();
+    li.append(inputValue);
+  
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      $('#list').append(li);
     }
-    function getAll() {
-      return repository;
+  //2. Crossing an item out:
+    function crossOut() {
+      li.toggleClass("strike");
     }
-    function addListItem(task) {
-      let taskList = document.querySelector(".task-list");
-      let button = document.querySelector("#task-list__button");
-      let taskLi = document.createElement("li");
-      let taskItem = document.createElement("div");
-      let done = document.createElement("div");
-      let note = document.createElement("p");
-      let remove = document.createElement("div");
-
-      note.innerText = task.task;
-
-      taskItem.classList.add("taskItem");
-      done.classList.add("done");
-      note.classList.add("note");
-      remove.classList.add("remove");
-      
-      let taskItemUnit = function() {
-        taskItem.appendChild(done);
-        taskItem.appendChild(note);
-        taskItem.appendChild(remove);      
-        taskLi.appendChild(taskItem);
-        taskList.appendChild(taskLi);
-      }
-
-      taskItemUnit();
-            
-
-      button.addEventListener('click', function(event) {
-        addListItem(task)
-      });
-
-    }
-    return {
-      add: add,
-      getAll: getAll,
-      addListItem: addListItem
-    };
-  })();
   
-  //toDoRepository.add({ task: "Task", note: "Note", tags: ["electric"] });
-
-
+    li.on("dblclick", function crossOut() {
+      li.toggleClass("strike");
+    });
+  //3. Adding a delete button
+    let crossOutButton = $('<crossOutButton></crossOutButton>');
+    crossOutButton.append(document.createTextNode('X'));
+    li.append(crossOutButton);
   
-  console.log(toDoRepository.getAll());
-  
-  toDoRepository.getAll().forEach(function(task) {
-    toDoRepository.addListItem(task);
-  });
-  
+  //   crossOutButton.on("click", deleteListItem);
+  //   function deleteListItem(){
+  // 		li.addClass("delete")
+  // 	}
+     $('#list').sortable();
+  */
