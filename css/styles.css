@@ -13,92 +13,10 @@ Lighter Grey { color: #868686 }
 Darker Grey { color: #464646 }
 Dark Grey { color: #222222 }
 Pink { color: #ffaed4;}
+ */
 
-
-  */
-
-
-
-  
-
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PROJECT CSS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
-
-body {
-font: normal normal 13px/16px "Open Sans", sans-serif;
-background: #dfdfdf;
-}
-
-.container{
-padding: 20px;
-width: 300px;
-margin: 0 auto;
-margin-top: 40px;
-background: white;
-border-radius: 5px;}
-
-form {
-display: inline-block;
-}
-
-input{
-padding: 4px 15px 4px 5px;
-}
-
-#button{
-display: inline-block;
-background-color:#fc999b;
-color:#ffffff;
-border-radius: 5px;
-text-align:center;
-margin-top:2px;
-padding: 5px 15px;
-}
-
-#button:hover{
-cursor: pointer;
-opacity: .8;}
-
-ol {padding-left: 20px;}
-
-ol li {padding: 5px;color:#000;}
-
-ol li:nth-child(even){background: #dfdfdf;}
-
-.strike{text-decoration: line-through;}
-
-li:hover{
-  cursor: pointer;
- }
-
-.delete {
-	display: none;
-}
-
-li > crossOutButton {
-	background: none;
-	border: none;
-	float: right;
-	color: #025f70;
-	font-weight: 800;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MY DEFAULT CSS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< FONTS & COLORS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-/*
+
 :root {
     --background-grey-color: #646464;
     --lighter-grey-color: #868686;
@@ -119,6 +37,129 @@ li > crossOutButton {
     --headings-font-family: 'DM Serif Display', serif;
     --copy-font-family: 'DM Sans', sans-serif;
   }
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--headings-font-family);
+    margin: 0;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+p {
+    line-height: 1;
+}
+
+p.instructions {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: var(--background-grey-color);
+    font-weight: var(--primary-font-weight);
+    color: var(--darkest-grey-color);
+    font-size: var(--p-font-size);
+    font-family: var(--copy-font-family);
+
+}
+
+.container{
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: var(--lightest-grey-color);
+    border-radius: 0px;
+}
+
+form {
+    display: inline-block;
+}
+input {
+    all: unset;
+  }
+
+input,
+input:focus {
+    padding: 5px 15px;
+    background-color: var(--lighter-grey-color);
+    width: 100%;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffaed4 inset;
+    box-shadow: 0 0 0px 1000px #ffaed4 inset;
+  }
+
+/*Reset Button*/
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#button {
+    
+    background-color:var(--primary-pink-color);
+    color:var(--darkest-grey-color);
+    border-radius: 0px;
+    text-align:center;
+    padding: 5px 15px;
+    float: right;
+}
+
+#button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    padding: 5px 15px;
+    color: var(--darkest-grey-color);
+}
+
+ol li:nth-child(even) {
+    background: var(--lighter-grey-color);
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+li:hover{
+    cursor: pointer;
+ }
+
+.delete {
+	display: none;
+}
+
+li > crossOutButton {
+	background: none;
+	border: none;
+	float: right;
+	color: var(--darkest-grey-color);
+	font-weight: 800;
+}
+
+
+
+
+/*
+
   
 * {
     padding: 0;
@@ -134,13 +175,7 @@ body {
 
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--headings-font-family);
-    margin: 0;
-}
+
 
 ul {
     list-style: none;
