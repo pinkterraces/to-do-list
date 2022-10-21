@@ -15,7 +15,7 @@ function newItem(){
   function crossOut() {
     li.toggleClass("strike");
   }
-  $('li').on("dblclick", crossOut);
+  $(li).on("dblclick", crossOut);
   
     
   let crossOutButton = $('<crossOutButton></crossOutButton>');
